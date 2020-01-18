@@ -6,10 +6,10 @@ import { Results } from './results.model';
   providedIn: 'root'
 })
 export class ResultsService {
-readonly routeURL = 'http://localhost/api/results';
+readonly routeURL = 'https://localhost:5001/api/results';
   constructor(private http: HttpClient) { }
   list: Results[];
-  refreshList(){
+  refreshList() {
     this.http.get(this.routeURL)
     .toPromise()
     .then(res => this.list = res as Results[]);

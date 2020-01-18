@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultsService } from 'src/app/shared/results.service';
 
 @Component({
   selector: 'app-results-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ResultsService) { }
 
   ngOnInit() {
+    this.service.refreshList();
   }
 
 }

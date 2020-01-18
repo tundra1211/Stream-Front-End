@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResultsListComponent } from './dashboard/results-list/results-list.component';
+import { ResultsService } from './shared/results.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,11 @@ import { ResultsListComponent } from './dashboard/results-list/results-list.comp
     ResultsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ResultsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
